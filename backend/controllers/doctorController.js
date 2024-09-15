@@ -43,7 +43,7 @@ export const getDoctor = async (req, res)=>{
         res.cookie('doctorId', doctor._id, { httpOnly: true });
         res.cookie('doctorEmail', doctor.email, { httpOnly: true });
     
-        res.status(200).json({ message: 'Login successful', doctorId: doctor._id, email: doctor.email });
+        res.status(200).json({ message: 'Login successful', doctorId: doctor._id, email: doctor.email, name: doctor.name, speciality: doctor.speciality });
       } catch (error) {
         res.status(500).json({ message: error.message });
       }
